@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Your Sneakers</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/w3.css">
+	<link rel="stylesheet" href="css/common_style.css">
+    <link rel="stylesheet" href="css/index_style.css">
+</head>
+<body>
+
+    
+	<!-- Contenido de la página -->
+	<main>
+	<img class="titulo" src="./images/index/titulo.png" alt="Your Sneakers">
+	</main>
+    
+    
+	<!-- Menú de navegación -->
+<header>
+	<nav>
+		<ul>
+			<li class="col-2 col-s-12"><a href="index.html">Home</a></li>
+            
+			<li class="col-2 col-s-12"><a href="gallery.html">New arrivals</a></li>
+            
+			<li class="col-2 col-s-12"><a href="page1.html">Brands & Models</a>
+				<ul>
+					<li><a href="http://www.nike.com">Nike</a></li>
+					<li><a href="http://www.jordan.com">Jordan</a></li>
+					<li><a href="http://www.adidas.com">Adidas</a></li>
+				</ul>
+			</li>
+            
+            <li class="col-2 col-s-12"><a href="page2.html">Raffle</a></li>
+		</ul>
+	</nav>
+</header>
+    
+    <br>
+    <br>
+    
+    <!-- Cuerpo de la página web -->
+    
+
+    
+        <article>
+       <div class="col-6 col-s-12" class="articulo"> 
+    <h2>A BIT OF HISTORY</h2>
+
+    <p>Once the symbol of athletics, sneakers have transcended their primary function to become objects of fashion and commercial desire. From sportswear and street style to runway fashion, sneakers have made their mark as cultural assets.
+    <br>
+        <br>
+        The last decade has seen a huge change in the way these sneakers are worn. Donning a pair to the workplace or more formal occasions is no longer frowned upon. Even Debrett's, a British firm of etiquette specialists, have given their stamp of approval, deeming them socially acceptable for smart-casual occasions.
+    </p>
+     </div>
+
+    
+        <div class="col-6 col-s-12" class="lista">
+        
+    <h2>MODELS</h2>
+    
+<ul>
+          <li><b><u>Running Shoes:</u></b> Designed to provide maximum support and comfort on every run. Available in a wide variety of colors and styles.</li>
+          <br>
+    <li><b><u>Sports shoes:</u></b> Perfect for training in the gym or doing any physical activity. With a wide variety of designs and materials to choose from.</li>
+          <br>
+    <li><b><u>Urban shoes:</u></b> Comfortable and fashionable to wear on a daily basis. With elegant and casual designs that combine with any style.</li>
+          <br>
+    <li><b><u>Fashion sneakers:</u></b> The latest trend in fashion sneakers, available in a wide variety of styles and colors to complement any outfit.</li>
+          <br>
+    <li><b><u>Skate shoes:</u></b> Specially designed for skateboarding, with resistant and durable materials to withstand daily use.</li>
+          <br>
+    <li><b><u>Sneakers for children:</u></b> A wide selection of shoes designed for the little ones in the house, with fun and colorful designs that they will love.</li>
+          <br>
+    <li><b><u>Luxury sneakers:</u></b> The maximum expression of quality and style in sports footwear. Manufactured with the best materials and designed to provide the best user experience.</li>
+</ul>
+      </div>
+       
+        </article>
+   
+
+<form class="container" id="quiz">
+    <h2>To get a 5% discount you must complete the following questions.</h2>
+  <div>
+   <p>1. What year were the first Nike Air Jordan shoes released?</p>
+    <input type="number" name="q1">
+    <div id="q1-feedback" class="feedback"></div>
+  </div>
+  <div>
+   <p>2. Which of these brands does NOT make shoes?</p>
+    <label><input type="radio" name="q2" value="adidas">Adidas</label>
+    <label><input type="radio" name="q2" value="nike">Nike</label>
+    <label><input type="radio" name="q2" value="puma">Puma</label>
+    <label><input type="radio" name="q2" value="puma">The North Face</label>
+    <div id="q2-feedback" class="feedback"></div>
+  </div>
+  <div>
+   <p>3. Which of these shoe brands was the first to make canvas shoes?</p>
+    <label><input type="radio" name="q3" value="vans">Vans</label>
+    <label><input type="radio" name="q3" value="converse">Converse</label>
+    <label><input type="radio" name="q3" value="reebok">Reebok</label>
+    <label><input type="radio" name="q3" value="puma">Nike</label>
+    <div id="q3-feedback" class="feedback"></div>
+  </div>
+  <div>
+  <p>4. Which of these shoe brands was the first to use Flywire technology in its manufacture?</p>
+    <label><input type="radio" name="q4" value="nike">Nike</label>
+    <label><input type="radio" name="q4" value="adidas">Adidas</label>
+    <label><input type="radio" name="q4" value="puma">Reebook</label>
+    <label><input type="radio" name="q4" value="puma">Puma</label>
+    <div id="q4-feedback" class="feedback"></div>
+  </div>
+  <div>
+<p>5. What year were the first Reebok Pump shoes released?</p>
+    <input type="number" name="q5">
+    <div id="q5-feedback" class="feedback"></div>
+  </div>
+  <input type="submit" value="¡Send answer!">
+</form>
+
+
+    <script>
+const form = document.getElementById('quiz');
+
+form.addEventListener('submit', function(event) {
+  event.preventDefault();
+
+  let score = 0;
+
+  const Q1 = parseInt(form.elements['q1'].value);
+  const Q2 = form.elements['q2'].value;
+  const Q3 = form.elements['q3'].value;
+  const Q4 = form.elements['q4'].value;
+  const Q5 = parseInt(form.elements['q5'].value);
+
+  // Pregunta 1
+  if (Q1 === 1985) {
+    score += 2;
+    document.getElementById('q1-feedback').textContent = '¡Correct!';
+    document.getElementById('q1-feedback').className = 'feedback correct';
+  } else if (Q1) {
+    score -= 1;
+    document.getElementById('q1-feedback').textContent = 'Wrong answer.';
+    document.getElementById('q1-feedback').className = 'feedback incorrect';
+  } else {
+    document.getElementById('q1-feedback').textContent = 'You did not answer this question.';
+    document.getElementById('q1-feedback').className = 'feedback no-answer';
+  }
+
+  // Pregunta 2
+  if (Q2 === 'puma') {
+    score += 2;
+    document.getElementById('q2-feedback').textContent = '¡Correct!';
+    document.getElementById('q2-feedback').className = 'feedback correct';
+  } else if (Q2) {
+    score -= 1;
+    document.getElementById('q2-feedback').textContent = 'Wrong answer.';
+    document.getElementById('q2-feedback').className = 'feedback incorrect';
+  } else {
+    document.getElementById('q2-feedback').textContent = 'You did not answer this question.';
+    document.getElementById('q2-feedback').className = 'feedback no-answer';
+  }
+
+  // Pregunta 3
+  if (Q3 === 'converse') {
+    score += 2;
+    document.getElementById('q3-feedback').textContent = '¡Correct!';
+    document.getElementById('q3-feedback').className = 'feedback correct';
+  } else if (Q3) {
+    score -= 1;
+    document.getElementById('q3-feedback').textContent = 'Wrong answer.';
+    document.getElementById('q3-feedback').className = 'feedback incorrect';
+  } else {
+    document.getElementById('q3-feedback').textContent = 'You did not answer this question.';
+    document.getElementById('q3-feedback').className = 'feedback no-answer';
+  }
+
+  // Pregunta 4
+  if (Q4 === 'nike') {
+    score += 2;
+    document.getElementById('q4-feedback').textContent = '¡Corrrect!';
+    document.getElementById('q4-feedback').className = 'feedback correct';
+  } else if (Q4) {
+    score -= 1;
+    document.getElementById('q4-feedback').textContent = 'Wrong answer.';
+    document.getElementById('q4-feedback').className = 'feedback incorrect';
+  } else {
+    document.getElementById('q4-feedback').textContent = 'You did not answer this question.';
+    document.getElementById('q4-feedback').className = 'feedback no-answer';
+  }
+
+  // Pregunta 5
+  if (Q5 === 1989) {
+    score += 2;
+    document.getElementById('q5-feedback').textContent = '¡Correct!';
+    document.getElementById('q5-feedback').className = 'feedback correct';
+  } else if (Q5) {
+    score -= 1;
+    document.getElementById('q5-feedback').textContent = 'Wrong answer.';
+    document.getElementById('q5-feedback').className = 'feedback incorrect';
+  }
+ 
+  alert(`Has obtenido ${score} puntos.`);
+});
+    </script>
+    
+    
+
+    <div class="container2">
+        <h2>Register to apply the discount.</h2>
+  <form id="registration-form">
+    <label for="name">Full name:</label>
+    <input type="text" id="name" name="name" required>
+    
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+    
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required>
+    
+    <label for="confirm-password">Confirm password:</label>
+    <input type="password" id="confirm-password" name="confirm-password" required>
+    
+    <input type="submit" value="Create acount">
+  </form>
+</div>
+    
+    <script>
+  const registrationForm = document.getElementById('registration-form');
+
+  registrationForm.addEventListener('submit', function(event) {
+    event.preventDefault(); // Evita que el formulario se envíe automáticamente
+
+    // Realizar validaciones personalizadas aquí
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+    const confirmPassword = document.getElementById('confirm-password').value;
+
+    if (password !== confirmPassword) {
+      showFeedback('Passwords do not match.', 'error');
+    } else {
+      // El formulario es válido, realizar el envío o cualquier acción adicional
+      showFeedback('Registration successful!', 'success');
+      registrationForm.reset(); // Reiniciar el formulario después de enviarlo correctamente
+    }
+  });
+
+  function showFeedback(message, type) {
+    if (type === 'error') {
+      alert('Error: ' + message);
+    } else if (type === 'success') {
+      alert('Success: ' + message);
+    }
+  }
+</script>
+
+    
+    
+    <div>
+   <a href="#top" class="back-to-top">Go top</a>
+    </div>
+    
+    <!-- Footer -->
+    
+    <footer>
+  <div class="footer-container">
+    <div class="footer-info">
+      <h3>Contact information</h3>
+      <p>Email: contact@yoursneakers.com</p>
+      <p>Number: +34 643 46 34 77</p>
+      <p>Address: Calle Colon, 35, Valencia, España</p>
+    </div>
+    <div class="footer-social">
+      <h3>Follow us on Social Media</h3>
+      <ul>
+        <li><a href="http://www.instagram.com">Instagram<i class="fab fa-instagram"></i></a></li>
+        <li><a href="http://www.tiktok.com">TikTok<i class="fab fa-tiktok"></i></a></li>
+        <li><a href="http://www.twitter.com">Twitter<i class="fab fa-twitter"></i></a></li>
+       
+      </ul>
+    </div>
+  </div>
+  <div class="footer-credits">
+    <p>© 2023 www.yoursneakers.com. 
+All copyright reserved.</p>
+  </div>
+</footer>
+</body>
+</html>
+

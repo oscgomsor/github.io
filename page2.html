@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Your Sneakers</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/w3.css">
+	<link rel="stylesheet" href="css/common_style.css">
+    <link rel="stylesheet" href="css/page2_style.css">
+</head>
+<body>
+
+
+	<!-- Contenido de la página -->
+	<main>
+			<img class="titulo" src="./images/index/titulo.png" alt="Title">
+	</main>
+    
+    
+	<!-- Menú de navegación -->
+<header>
+	<nav>
+		<ul>
+			<li class="col-2 col-s-12"><a href="index.html">Home</a></li>
+            
+			<li class="col-2 col-s-12"><a href="gallery.html">New arrivals</a></li>
+            
+			<li class="col-2 col-s-12"><a href="page1.html">Brands & Models</a>
+				<ul>
+					<li><a href="http://www.nike.com">Nike</a></li>
+					<li><a href="http://www.jordan.com">Jordan</a></li>
+					<li><a href="http://www.adidas.com">Adidas</a></li>
+				</ul>
+			</li>
+            
+            <li class="col-2 col-s-12"><a href="page2.html">Raffle</a></li>
+		</ul>
+	</nav>
+</header>
+    
+   
+<div style="background-image: url(./images/page2/ticket.jpg); background-size:auto; background-position: center;">
+    
+    <h2>*If you want to enter the raffle you have to complete this form.*</h2>
+    
+    
+    <form action="/raffle.php" method="POST">
+  <fieldset>
+    <legend>Registration form</legend>
+
+    <label for="nombre">Full name:</label>
+    <input type="text" id="nombre" name="nombre" required>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="talla">Size:</label>
+    <select id="talla" name="talla">
+      <option value="36">36</option>
+      <option value="37">37</option>
+      <option value="38">38</option>
+      <option value="39">39</option>
+      <option value="40">40</option>
+      <option value="41">41</option>
+      <option value="42">42</option>
+      <option value="43">43</option>
+      <option value="44">44</option>
+      <option value="45">45</option>
+    </select>
+
+    <label for="color">What is your favorite model of sneakers?:</label>
+    <input type="text" id="modelo" name="modelo">
+
+    <label for="porque">Why do you want these sneakers?</label>
+    <textarea id="porque" name="porque"></textarea>
+
+    <button type="submit">Send</button>
+  </fieldset>
+</form>
+    </div>
+    
+    <footer>
+  <div class="footer-container">
+    <div class="footer-info">
+      <h3>Contact information</h3>
+      <p>Email: contact@yoursneakers.com</p>
+      <p>Number: +34 643 46 34 77</p>
+      <p>Address: Calle Colon, 35, Valencia, España</p>
+    </div>
+    <div class="footer-social">
+      <h3>Follow us on Social Media</h3>
+      <ul>
+        <li><a href="http://www.instagram.com">Instagram<i class="fab fa-instagram"></i></a></li>
+        <li><a href="http://www.tiktok.com">TikTok<i class="fab fa-tiktok"></i></a></li>
+        <li><a href="http://www.twitter.com">Twitter<i class="fab fa-twitter"></i></a></li>
+       
+      </ul>
+    </div>
+  </div>
+  <div class="footer-credits">
+    <p>© 2023 www.yoursneakers.com. All copyright reserved.</p>
+  </div>
+</footer>
+</body>
+</html>
