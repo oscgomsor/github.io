@@ -1,0 +1,104 @@
+h2{
+    color: darkorange;
+    font-size: 30px;
+    margin: 10px 20px;
+    font-family: fantasy;
+}
+
+article {
+  display:flex;
+flex-wrap: wrap;
+    flex-direction: row;
+    margin: auto 20px;
+    margin-bottom: 20px
+}
+
+.video-container {
+    display:flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    }
+
+iframe {
+    display: flex;
+    margin: 0px auto;
+    padding: 0 20px;
+    margin-bottom: 50px
+}
+
+
+.table-container {
+     width: auto;
+      margin: 0 auto;
+        display: flex;
+        margin-bottom: 50px
+    }
+
+.form-container {
+    display:flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin-bottom: 50px
+    
+}
+
+.container_1_form {
+   display: block;
+    margin: 10px auto;
+  padding: 20px;
+    width: auto;
+  box-sizing: border-box;
+  background-color: #f2f2f2;
+  border-radius: 10px;
+  color: black;
+    flex-wrap: wrap;
+    flex-direction: row;
+    
+}
+
+
+label {
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+input[type="text"],
+input[type="number"] {
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 5px;
+  border: none;
+    background-color: #9B9B9B;
+    display: flex;
+}
+
+input[type="radio"] {
+  margin-right: 10px;
+}
+
+input[type="submit"] {
+  padding: 10px 20px;
+  margin-top: 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #4286f4;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Estilos de subtextos */
+.feedback {
+  margin-top: 5px;
+}
+
+.correct {
+  color: green;
+}
+
+.incorrect {
+  color: red;
+}
+
+.no-answer {
+  color: darkorange;
+}

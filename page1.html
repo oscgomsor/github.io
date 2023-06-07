@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<title>Your Sneakers</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/w3.css">
+	<link rel="stylesheet" href="css/common_style.css">
+    <link rel="stylesheet" href="css/page1_style.css">
+</head>
+<body>
+
+
+
+    
+	<!-- Contenido de la página -->
+	<main>
+				<img class="titulo" src="./images/index/titulo.png" alt="Title">
+
+	</main>
+    
+
+	<!-- Menú de navegación -->
+<header>
+	<nav>
+        
+        <ul class="menu_movil menu_drop">
+            <li><a href="#menu"> <i class="fa fa-home"></i> </a>
+                    <ul>
+			<li><a href="index.html">Home</a></li>
+            
+			<li><a href="gallery.html">New arrivals</a></li>
+                        
+            <li><a href="page2.html">Raffle</a></li>
+                        
+            <li><a href="page1.html">Brands & Models</a>
+				<ul>
+					<li><a href="http://www.nike.com">Nike</a></li>
+					<li><a href="http://www.jordan.com">Jordan</a></li>
+					<li><a href="http://www.adidas.com">Adidas</a></li>
+				</ul>
+			</li>
+		          </ul>
+            </li>
+    </ul>
+        
+        
+        
+        
+		<ul class="menu_pc menu_drop">
+			<li class="col-2 col-s-12"><a href="index.html">Home</a></li>
+            
+			<li class="col-2 col-s-12"><a href="gallery.html">New arrivals</a></li>
+            
+            <li class="col-2 col-s-12"><a href="page2.html">Raffle</a></li>
+            
+            <li class="col-2 col-s-12"><a href="page1.html">Brands & Models</a>
+				<ul>
+					<li><a href="http://www.nike.com">Nike</a></li>
+					<li><a href="http://www.jordan.com">Jordan</a></li>
+					<li><a href="http://www.adidas.com">Adidas</a></li>
+				</ul>
+			</li>
+        
+		</ul>
+	</nav>
+</header>
+    
+   <table class="col-8 col-s-11" id="xmlTable">
+    <tbody></tbody>
+  </table>
+
+  <div id="output"></div>
+
+  <script>
+    // Cargar el archivo XML
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        mostrarXML(this);
+      }
+    };
+    xhttp.open("GET", "catalogo.xml", true);
+    xhttp.send();
+
+    // Mostrar el contenido del XML en forma de tabla
+    function mostrarXML(xml) {
+      var xmlDoc = xml.responseXML;
+      var productos = xmlDoc.getElementsByTagName("product");
+      var tabla = document.getElementById("xmlTable").getElementsByTagName("tbody")[0];
+
+      // Iterar sobre los productos y agregar filas a la tabla
+      for (var i = 0; i < productos.length; i++) {
+        var imagen = productos[i].getElementsByTagName("image")[0].textContent;
+        var modelo = productos[i].getElementsByTagName("model")[0].textContent;
+        var marca = productos[i].getElementsByTagName("brand")[0].textContent;
+        var precio = productos[i].getElementsByTagName("price")[0].textContent;
+
+        // Crear una nueva fila y celdas de datos
+        var fila = document.createElement("tr");
+        var celdaParametro = document.createElement("th");
+        var celdaValor = document.createElement("td");
+
+        // Crear elementos para mostrar la imagen y el texto
+        var imagenElemento = document.createElement("img");
+        imagenElemento.src = imagen;
+        imagenElemento.alt = modelo;
+        imagenElemento.height = "50";
+
+        var textoElemento = document.createTextNode(modelo + " - " + marca + " - " + precio);
+
+        // Agregar los elementos a las celdas
+        celdaParametro.appendChild(imagenElemento);
+        celdaValor.appendChild(textoElemento);
+
+        // Agregar las celdas a la fila
+        fila.appendChild(celdaParametro);
+        fila.appendChild(celdaValor);
+
+        // Agregar la fila a la tabla
+        tabla.appendChild(fila);
+      }
+    }
+  </script>
+   
+        <div>
+   <a href="#top" class="back-to-top">Go top</a>
+    </div>
+    
+    
+    <footer>
+  <div class="footer-container">
+    <div class="footer-info">
+      <h3>Contact information</h3>
+      <p>Email: contact@yoursneakers.com</p>
+      <p>Number: +34 643 46 34 77</p>
+      <p>Address: Calle Colon, 35, Valencia, España</p>
+    </div>
+    <div class="footer-social">
+      <h3>Follow us on Social Media</h3>
+      <ul>
+        <li><a href="http://www.instagram.com">Instagram<i class="fab fa-instagram"></i></a></li>
+        <li><a href="http://www.tiktok.com">TikTok<i class="fab fa-tiktok"></i></a></li>
+        <li><a href="http://www.twitter.com">Twitter<i class="fab fa-twitter"></i></a></li>
+       
+      </ul>
+    </div>
+  </div>
+  <div class="footer-credits">
+    <p>© 2023 www.yoursneakers.com. All copyright reserved.</p>
+  </div>
+</footer>
+</body>
+</html>
